@@ -1,7 +1,7 @@
 import sys 
 #interacting with interpret
 import  logging
-import logger
+from src.logger import logging
 
 def error_message_detail(error,error_detail):
     _,_,exc_tb=error_detail.exc_info()
