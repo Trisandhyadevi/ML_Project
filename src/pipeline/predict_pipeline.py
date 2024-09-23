@@ -16,6 +16,7 @@ class predictpipeline:
             data_scaler = preprocessor.transform(features)
             preds =model.predict(data_scaler)
             return preds
+        
         except Exception as e:
             raise CustomException(e,sys)
             
