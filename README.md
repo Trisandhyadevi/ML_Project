@@ -41,4 +41,4 @@ We create a prediction pipeline where incoming data is transformed into a DataFr
 
 The trained model is deployed as an Azure Web App, allowing users to access the prediction functionality online.
 
-**Deployment Link**: [Insert Deployment Link Here]
+**Deployment Link**: [will be updated soon]
