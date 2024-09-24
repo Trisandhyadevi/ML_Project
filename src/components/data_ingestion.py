@@ -14,6 +14,7 @@ from src.components.data_transformation import DataTransformation
 from src.components.data_transformation import DataTransformationConfig
 from src.components.mode_trainer import ModeltrainerConfig
 from src.components.mode_trainer import ModelTrainer
+from src.components.model_tester import ModelTester
 
 @dataclass
 class DataIngestionConfig:
@@ -53,5 +54,12 @@ if __name__ == "__main__":
     train_arr,test_arr,_=data_transformation.initiate_data_transformation(train_data,test_data)
     
     modeltrainer = ModelTrainer()
+    print("Training the model...")
     print(modeltrainer.initiate_model_trainer(train_arr,test_arr))
+    
+    print("Testing the model...")
+    tester = ModelTester(model_file_path="artifacts/model.pkl")
+    test_scores = tester.evaluate_on_test_data(test_arr=test_arr)
+    print(f"Test Scores: {test_scores}")
+    
     
